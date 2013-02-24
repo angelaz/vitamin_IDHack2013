@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="page-header">
+<h1>{{userprofile.name}} </h1>
+</div>
+{% if reports %}
+<div class="section-header">
+<h2>To Approve</h2>
+</div>
+    
+    <table summary="List" class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Supplm. 6-11 Months</th>
+            <th>Supplm. 12-59 Months</th>
+            <th>Dewormed 12-59 Months</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        
+        {% for report in reports %}
+            {% if not report.approved %}
+            <tr>
+                    <td>{{ report.owner.name }}</td>
+                    <td>{{ report.owner.phone }}</td>
+                    <td>{{ report.supplemented_small }}</td>
+                    <td>{{ report.supplemented_big }}</td>
+                    <td>{{ report.dewormed }}</td>
+                    <td><a href="/approve?report_id={{report.id}}" class="btn btn-success">Approve</button></td>
+                    <td><a href="/deny?report_id={{report.id}}" class="btn btn-danger">Deny</button></td>
+
+            </tr>  
+            {% endif %}
+        {% endfor %}
+        
+              
+    </table>
+
+<div class="section-header">
+<h2>Approved By You</h2>
+</div>
+    <table summary="AcceptedList" class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Supplm. 6-11 Months</th>
+            <th>Supplm. 12-59 Months</th>
+            <th>Dewormed 12-59 Months</th>
+        </tr>
+
+        {% for report in reports %}
+            {% if report.approved %}
+            <tr>
+                    <td>{{ report.owner.name }}</td>
+                    <td>{{ report.owner.phone }}</td>
+                    <td>{{ report.supplemented_small }}</td>
+                    <td>{{ report.supplemented_big }}</td>
+                    <td>{{ report.dewormed }}</td>
+            </tr>  
+            {% endif %}
+        {% endfor %}
+              
+    </table>
+{% endif %}
+{% if districts %}
+<div class="section-header">
+<h2>Districts in Region</h2>
+</div>
+    
+    <table summary="List" class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Supplm. 6-11 Months</th>
+            <th>Supplm. 12-59 Months</th>
+            <th>Dewormed 12-59 Months</th>
+        </tr>
+
+        
+        {% for district, results in districts %}
+            <tr>
+                <td>{{ district.user.name }}</td>
+                <td>{{ district.user.phone }}</td>
+                {% for result in results %}
+                    <td>{{ result }}</td>
+                {% endfor %}
+            </tr>  
+        {% endfor %}
+        
+              
+    </table>
+{% endif %}
+{% if regions %}
+<div class="section-header">
+<h2>Regions in Nation</h2>
+</div>
+    
+    <table summary="List" class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Supplm. 6-11 Months</th>
+            <th>Supplm. 12-59 Months</th>
+            <th>Dewormed 12-59 Months</th>
+        </tr>
+
+        
+        {% for region, results in regions %}
+            <tr>
+                <td>{{ region.user.name }}</td>
+                <td>{{ region.user.phone }}</td>
+                {% for result in results %}
+                    <td>{{ result }}</td>
+                {% endfor %}
+            </tr>  
+        {% endfor %}
+        
+              
+    </table>
+{% endif %}
+<!-- 
+    <table summary="List" class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Supplm. 6-11 Months</th>
+            <th>Supplm. 12-59 Months</th>
+            <th>Dewormed 12-59 Months</th>
+        </tr>
+
+        <tr>
+            {% for inferior in inferiors %}
+                {% if inferior.user %}
+                    <td>{{ inferior.user.name }}</td>
+                    <td>{{ inferior.user.phone }}</td>
+                {% else %}
+                    <td>{{ inferior.name }}</td>
+                    <td>{{ inferior.phone }}</td>
+            {% endif %}
+
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>                
+        {% endfor %}
+    </table> -->
+
+{% endblock %}

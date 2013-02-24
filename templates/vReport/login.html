@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+  <form action="" method="post" id="signin-form">
+    {% csrf_token %}
+    {% if form.errors %}
+    <div class="alert alert-error">Your username and password didn't match. Please try again!</div>
+    {% endif %}
+    {% for field in form %}
+      <label for="id_{{ field.html_name }}" class="control-label">{{ field.label }}</label>
+      <div class="controls">
+        {{ field }}
+      </div>
+    {% endfor %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <button class="btn btn-primary" type="submit">Sign in</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="page-header">
+<h1>Totals</h1>
+</div>
+
+<div class="row jumbotron-huge">
+    <div class="span4">{{ small }}</div>
+	<div class="span4">{{ large }}</div>
+	<div class="span4">{{ worms }}</div>
+</div>
+<div class="row jumbotron lead">
+    <div class="span4">6-11 months</div>
+    <div class="span4">12-59 months</div>
+    <div class="span4">12-59 months de-wormed</div>
+</div>
+<div class="row jumbotron lead">
+    <div class="span4">
+		<div class="progress progress-striped active">
+		  <div class="bar" style="width: {{ small_portion }}%;"></div>
+		</div>
+    </div>
+    <div class="span4">
+    	<div class="progress progress-striped active">
+		  <div class="bar" style="width: {{ big_portion }}%;"></div>
+		</div>
+    </div>
+    <div class="span4">
+		<div class="progress progress-striped active">
+		  <div class="bar" style="width: {{ worm_portion }}%;"></div>
+		</div>
+    </div>
+</div>
+
+{% endblock %}

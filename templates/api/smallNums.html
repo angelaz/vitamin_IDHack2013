@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+</script>
+
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB74xfw7XbOcAY6fy-TyIa3BBXQNkT9KKw&libraries=visualization,drawing&sensor=false">
+</script>
+<script type="text/javascript" src="/static/bootstrap/js/mainScript.js">
+</script>
+
+<div class="page-header">
+<h1>Totals</h1>
+</div>
+
+<div class="row jumbotron-huge">
+    <div class="span4">{{ small }}</div>
+    <div class="span4">{{ large }}</div>
+    <div class="span4">{{ worms }}</div>
+</div>
+<div class="row jumbotron lead">
+    <div class="span4">6-11 months</div>
+    <div class="span4">12-59 months</div>
+    <div class="span4">12-59 months de-wormed</div>
+</div>
+<div class="row jumbotron lead">
+    <div class="span4">
+        <div class="progress progress-striped active">
+          <div class="bar" style="width: 40%;"></div>
+        </div>
+    </div>
+    <div class="span4">
+        <div class="progress progress-striped active">
+          <div class="bar" style="width: 40%;"></div>
+        </div>
+    </div>
+    <div class="span4">
+        <div class="progress progress-striped active">
+          <div class="bar" style="width: 80%;"></div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row">
+
+    <div class="span9"> 
+        <div id="map_canvas" style="width:700px; height:500px"></div>
+    </div>
+
+    <div class="span3"> 
+
+
+        <div id="info_panel">
+            <p id="region_info"><i>Move mouse cursor over a region to see details</i></p>
+            <input type="button" id="up_button" value="Tanzania"/>
+        </div>
+
+        <div>
+            <input type="button" class="btn btn-primary" id="small_button" value="VAS 6-11 Months"></li>
+            <input type="button" class="btn btn-primary" id="medium_button" value="VAS 12-59 Months"></li>
+            <input type="button" class="btn btn-primary" id="dewormed_button" value="Deworm 12-59 Months"></li>
+        </div>
+        
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

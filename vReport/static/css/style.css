@@ -1,0 +1,59 @@
+#logistics-form label {
+  width: 300px
+}
+
+#logistics-form .controls {
+  margin-left: 320px;
+}
+
+#logistics-form textarea {
+  width: 400px;
+  height: 100px;
+}
+
+.control-group ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.errorlist {
+  list-style: none;
+  margin-left: 0;
+}
+
+#signin-form {
+  margin: 0 auto;
+  width: 220px;
+}
+
+.footer {
+  color: #888;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+}
+#logo:hover {
+  color: #eee;
+}
+#logo .logo-light {
+  font-weight: 300;
+}
+
+#wrap {
+   width:600px;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   width:300px;
+}
+#right_col {
+   float:right;
+   width:300px;
+}
+

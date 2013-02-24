@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+
+<div class="row">
+
+    <div class="span6">
+        <div class="page-header">
+            <h2>Add Reporter</h2>
+        </div>
+
+        <form action="/add/" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+
+    <div class="span6">
+        <div class="page-header">
+        <h2>Current Reporters</h2>
+        </div>
+
+         <table summary="List" class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+
+        {% for reporter in reporters %}
+            {% if reporter.name %}
+            <tr>
+                <td> {{ reporter.name}} </td>
+                <td> {{ reporter.phone }} </td>
+            </tr>
+            {% endif %}
+            {% if reporter.user.name %}
+            <tr>
+                <td> {{ reporter.user.name }} </td>
+                <td> {{ reporter.user.phone }} </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

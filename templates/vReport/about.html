@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="page-header"><h1>About Vitamin</h1></div>
+<div class="page-header"><h2>Problem: Late Reporting of Vitamin A Supplementation Coverage Data</h2></div>
+<p>Tanzania has implemented twice yearly vitamin A supplementation (VAS) and deworming events to children in the country to reduce child morbidity and mortality and therefore enhance child survival rate. </p>
+
+<p>Coverage data and statistics are compiled using tally sheets at the individual health facitites. Once a week, these data are sent to the district, which then propagate up to the regional and national level. </p>
+
+<p>It is difficult for the national organization to identify areas that need to be targeted for the next event because: </p>
+
+<ol>
+<li>Data compilation is done at 3 levels. At the health facility level it takes up to 7 days to complete, at the District level it takes 14 days and at the Regional level 7 days</li>
+<li>Submission of data from one level to the next depends on the availability of data from all of the supplementation sites that are within the health facility catchment area. When data from one location is delayed or missing, the submission process is delayed.</li>
+</ol>
+
+<div class="page-header"><h2>Our Solution:</h2></div>
+
+<p>Each administrator at local health facilities, districts, regions, and national level register an account on Vitamin with their entity names and phone numbers.</p>
+
+<p>At the lowest level, each registered health facility sends a daily SMS containing VAS and deworm figures to a nation-wise number. These SMS is auto distributed to the different districts for approval. Once approved, the data is instantaneously streamlined up to the regional and national level.</p>
+
+<p>Once the data is entered, the program should be able to calculate national, regional and district coverage, as well as coverage at each facility.  Coverage at a facility would be calculated as the number of children supplemented divided by the target population * 100.</P>
+
+<p>In order to calculate district coverage, the program would need to know all of the health facilities in the district, coverage at each of the health facilities and the target population for the district.  Then coverage could be calculated by the sum of coverage at each of the health facilities, divided by the target population, * 100.</p>
+
+<p>Then regional coverage would be calculated by the sum of coverage at each of the districts in the region, divided by the target population for the region, *100.</p>
+
+<p>On distribution days, a reminder to submit daily coverage figures should be sent to each health post.</p>
+
+<p>Upon submission of coverage data, a feedback message should be sent to each of the health posts to thank them for their submission and also to inform them on progress on achieving their target.</p>
+
+<p>The data should feed into a database that HKI and Ministry of Health staff can access without needing technical knowledge.  The data should not remain on the phones themselves.</p>
+
+<p>The technology should be user friendly, compatible with most type of mobile phones and accompanied by a troubleshooting guide if possible.  After a pilot test, we would want to use this program on a national scale, so a program that works only on android phones would not be feasible.</p>
+
+<div class="page-header"><h2>Application of the Technology</h2></div>
+
+<p>
+The application would be used during every bi-annual VAS event to get a rapid estimate of coverage and identify low-performing areas where additional actions are needed to increase coverage. </p>
+{% endblock %}
+
+
+
+
+
