@@ -1,6 +1,10 @@
 vitamin
 =======
 
+http://vitamin.herokuapp.com/
+
+Sample log in: Username & Password: Tanzania
+
 ID Hack project by Angela Zhang, John Holliman, Alvaro Morales, Michael Turek
 
 
